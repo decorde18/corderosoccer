@@ -1,5 +1,4 @@
-import { useState } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Styled components
 const Wrapper = styled.div`
@@ -54,28 +53,6 @@ const Section = styled.section`
   }
 `;
 
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-
-  th,
-  td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-
-  th {
-    background-color: #004d00;
-    color: #fff;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-`;
-
 const Footer = styled.footer`
   text-align: center;
   background: #222;
@@ -89,47 +66,31 @@ function LandingPage() {
       <Header>
         <h1>Cordero Soccer</h1>
         <Nav>
-          <a href='#youth-coaching'>Youth Coaching</a>
-          <a href='#adult-league'>Adult League</a>
-          <a href='#high-school-team'>High School Team</a>
-          <a href='#standings'>Standings</a>
-          <a href='#self-improvement'>Self-Improvement</a>
-          <a href='#contact'>Contact</a>
+          <a href="#youth-coaching">Youth Coaching</a>
+          <a href="#adult-league">Adult League</a>
+          <a href="#high-school-team">High School Team</a>
+
+          <a href="#self-improvement">Self-Improvement</a>
+          <a href="#contact">Contact</a>
+          <a href="/standings">Standings</a>
+          <a href="/ihs">IHS</a>
         </Nav>
       </Header>
       <Main>
-        <Section id='youth-coaching'>
+        <Section id="youth-coaching">
           <h2>Youth Coaching</h2>
           <p>Details about coaching programs, schedules, and sign-ups.</p>
         </Section>
-        <Section id='adult-league'>
+        <Section id="adult-league">
           <h2>Adult League</h2>
           <p>Information about league rules, standings, and registration.</p>
         </Section>
-        <Section id='high-school-team'>
+        <Section id="high-school-team">
           <h2>High School Team</h2>
           <p>Game schedules, team roster, and player profiles.</p>
         </Section>
-        <Section id='standings'>
-          <h2>Standings</h2>
-          <Table>
-            <thead>
-              <tr>
-                <th>Team</th>
-                <th>Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {standings.map((team, index) => (
-                <tr key={index}>
-                  <td>{team.team}</td>
-                  <td>{team.points}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Section>
-        <Section id='self-improvement'>
+
+        <Section id="self-improvement">
           <h2>Self-Improvement</h2>
           <p>Links and resources for personal growth and development.</p>
         </Section>
