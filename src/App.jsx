@@ -34,12 +34,28 @@ function App() {
             <Route
               path="standings"
               element={
-                <iframe
-                  src="https://standings-decorde.netlify.app"
-                  style={{ width: '100%', height: '100vh', border: 'none' }}
-                />
+                <div
+                  style={{ width: '100%', height: '100vh', overflow: 'hidden' }}
+                >
+                  <iframe
+                    src="https://standings-decorde.netlify.app"
+                    style={{ width: '100%', height: '100%', border: 'none' }}
+                  />
+                  <p style={{ textAlign: 'center', marginTop: '1rem' }}>
+                    If the standings dont load, click{' '}
+                    <a
+                      href="https://standings-decorde.netlify.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      here
+                    </a>
+                    .
+                  </p>
+                </div>
               }
             />
+
             <Route
               path="ihs"
               element={
