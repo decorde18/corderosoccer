@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { StyleSheetManager } from "styled-components"; //needed for the props in styledComponents to not return errors
-import isPropValid from "@emotion/is-prop-valid"; //needed for the props in styledComponents to not return errors
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Toaster } from "react-hot-toast";
-import LandingPage from "../pages/landingPage";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { StyleSheetManager } from 'styled-components'; //needed for the props in styledComponents to not return errors
+import isPropValid from '@emotion/is-prop-valid'; //needed for the props in styledComponents to not return errors
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Toaster } from 'react-hot-toast';
+import LandingPage from '../pages/LandingPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,7 +16,7 @@ function App() {
   // This implements the default behavior from styled-components v5
   function shouldForwardProp(propName, target) {
     //needed for the props in styledComponents to not return errors
-    if (typeof target === "string") {
+    if (typeof target === 'string') {
       // For HTML elements, forward the prop if it is a valid HTML attribute
       return isPropValid(propName);
     }
@@ -30,40 +30,40 @@ function App() {
         <ReactQueryDevtools initialIsOpen={false} />
         <Router>
           <Routes>
-            <Route path='/' element={<LandingPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route
-              path='standings'
+              path="standings"
               element={
                 <iframe
-                  src='https://standings-decorde.netlify.app'
-                  style={{ width: "100%", height: "100vh", border: "none" }}
+                  src="https://standings-decorde.netlify.app"
+                  style={{ width: '100%', height: '100vh', border: 'none' }}
                 />
               }
             />
             <Route
-              path='ihs'
+              path="ihs"
               element={
                 <iframe
-                  src='https://sweet-biscuit-be17d4.netlify.app'
-                  style={{ width: "100%", height: "100vh", border: "none" }}
+                  src="https://sweet-biscuit-be17d4.netlify.app"
+                  style={{ width: '100%', height: '100vh', border: 'none' }}
                 />
               }
             />
           </Routes>
 
           <Toaster
-            position='top-center'
+            position="top-center"
             gutter={12}
-            containerStyle={{ margin: "8px" }}
+            containerStyle={{ margin: '8px' }}
             toastOptions={{
               success: { duration: 3000 },
               error: { duration: 5000 },
               style: {
-                fontSize: "16px",
-                maxWidth: "500px",
-                padding: "16px 24px",
-                backgroundColor: "var(--color-grey-0)",
-                color: "var(--color-grey-700",
+                fontSize: '16px',
+                maxWidth: '500px',
+                padding: '16px 24px',
+                backgroundColor: 'var(--color-grey-0)',
+                color: 'var(--color-grey-700',
               },
             }}
           />
