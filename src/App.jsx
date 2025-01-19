@@ -44,7 +44,7 @@ function App() {
               path="ihs"
               element={
                 <iframe
-                  src="https://sweet-biscuit-be17d4.netlify.app"
+                  src="https://ihsapp.netlify.app"
                   style={{ width: '100%', height: '100vh', border: 'none' }}
                 />
               }
