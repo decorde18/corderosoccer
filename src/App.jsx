@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from 'react-hot-toast';
 import LandingPage from '../pages/LandingPage';
-import Standings from '../pages/Standings';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,8 +31,21 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="standings" element={<Standings />} />
 
+            <Route
+              path="standings"
+              element={
+                <iframe
+                  src="https://standings-decorde.netlify.app"
+                  style={{
+                    width: '100%',
+                    height: '100dvh',
+                    border: 'none',
+                    margin: '-10px',
+                  }}
+                />
+              }
+            />
             <Route
               path="ihs"
               element={
