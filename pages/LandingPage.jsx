@@ -10,8 +10,8 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  background: #004d00;
-  color: #fff;
+  background: #e92228;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
 
@@ -27,7 +27,7 @@ const Nav = styled.nav`
   margin-top: 10px;
 
   a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 
@@ -42,58 +42,80 @@ const Main = styled.main`
 `;
 
 const Section = styled.section`
-  background: #fff;
+  background: #ebeff7;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  color: #060911;
 
   h2 {
-    color: #004d00;
+    color: #3a5eab;
   }
 `;
 
 const Footer = styled.footer`
   text-align: center;
-  background: #222;
-  color: #fff;
+  background: #060911;
+  color: #ffffff;
   padding: 10px 20px;
 `;
-
+const pages = [
+  {
+    label: 'Standings',
+    link: '/standings',
+  },
+  {
+    label: 'IHS',
+    link: '/ihs',
+  },
+  {
+    label: 'Youth Coaching',
+    link: '#youth-coaching',
+    details: 'Details about coaching programs, schedules, and sign-ups.',
+  },
+  {
+    label: 'Adult League',
+    link: '#adult-league',
+    details: 'Information about league rules, standings, and registration.',
+  },
+  {
+    label: 'High School Team',
+    link: '#high-school-team',
+    details: 'Game schedules, team roster, and player profiles.',
+  },
+  {
+    label: 'Self-Improvement',
+    link: '#self-improvement',
+    details: 'Links and resources for personal growth and development.',
+  },
+  {
+    label: 'Contact',
+    link: '#contact',
+  },
+];
 function LandingPage() {
   return (
     <Wrapper>
       <Header>
         <h1>Cordero Soccer</h1>
         <Nav>
-          <a href="#youth-coaching">Youth Coaching</a>
-          <a href="#adult-league">Adult League</a>
-          <a href="#high-school-team">High School Team</a>
-
-          <a href="#self-improvement">Self-Improvement</a>
-          <a href="#contact">Contact</a>
-          <a href="/standings">Standings</a>
-          <a href="/ihs">IHS</a>
+          {pages.map((page, idx) => (
+            <a key={`nav-${idx}`} href={page.link}>
+              {page.label}
+            </a>
+          ))}
         </Nav>
       </Header>
       <Main>
-        <Section id="youth-coaching">
-          <h2>Youth Coaching</h2>
-          <p>Details about coaching programs, schedules, and sign-ups.</p>
-        </Section>
-        <Section id="adult-league">
-          <h2>Adult League</h2>
-          <p>Information about league rules, standings, and registration.</p>
-        </Section>
-        <Section id="high-school-team">
-          <h2>High School Team</h2>
-          <p>Game schedules, team roster, and player profiles.</p>
-        </Section>
-
-        <Section id="self-improvement">
-          <h2>Self-Improvement</h2>
-          <p>Links and resources for personal growth and development.</p>
-        </Section>
+        {pages
+          .filter((page) => page.details)
+          .map((page, idx) => (
+            <Section key={`section-${idx}`}>
+              <h2>{page.label}</h2>
+              <p>{page.details}</p>
+            </Section>
+          ))}
       </Main>
       <Footer>
         <p>&copy; 2025 Cordero Soccer. All rights reserved.</p>
