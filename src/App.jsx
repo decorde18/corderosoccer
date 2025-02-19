@@ -22,8 +22,8 @@ const queryClient = new QueryClient({
 const router = createBrowserRouter([
   { path: '/', element: <LandingPage /> },
   /* These routes will be handled by Netlify redirects */
-  // { path: 'standings', element: <ExternalPagePlaceHolder /> },
-  // { path: 'ihs', element: <ExternalPagePlaceHolder /> },
+  { path: 'standings', element: <ExternalPagePlaceHolder /> },
+  { path: 'ihs', element: <ExternalPagePlaceHolder /> },
 ]);
 function App() {
   // This implements the default behavior from styled-components v5
