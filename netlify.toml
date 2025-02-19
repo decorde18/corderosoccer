@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/standings"
-  to = "https://standings-decorde.netlify.app"
+  to = "https://standings-decorde.netlify.app/"
   status = 200
   force = true
 
