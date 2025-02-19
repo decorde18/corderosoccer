@@ -1,13 +1,13 @@
 [[redirects]]
   from = "/standings"
   to = "https://standings-decorde.netlify.app"
-  status = 200
+  status = 301
   force = true
 
 [[redirects]]
   from = "/ihs"
   to = "https://ihsapp.netlify.app"
-  status = 200
+  status = 301
   force = true
 
   [build]
