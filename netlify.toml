@@ -2,13 +2,13 @@
   from = "/standings"
   to = "https://standings-decorde.netlify.app"
   status = 301
-  force = true
+  force = false
 
 [[redirects]]
   from = "/ihs"
   to = "https://ihsapp.netlify.app"
   status = 301
-  force = true
+  force = false
 
   [build]
   publish = "dist" # or "build" if using Create React App
