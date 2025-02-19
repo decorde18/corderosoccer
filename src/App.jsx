@@ -1,18 +1,14 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components'; //needed for the props in styledComponents to not return errors
 import isPropValid from '@emotion/is-prop-valid'; //needed for the props in styledComponents to not return errors
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Toaster } from 'react-hot-toast';
-import LandingPage from '../pages/LandingPage';
-import ExternalPagePlaceHolder from '../pages/ExternalPagePlaceHolder';
+import LandingPage from './pages/LandingPage';
+import ExternalPagePlaceHolder from './pages/ExternalPagePlaceHolder';
 import Toast from './components/UI/Toast';
+import RootLayout from './pages/RootLayout';
+import Error from './components/UI/Error';
+import Contact from './pages/Contact';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,8 +16,18 @@ const queryClient = new QueryClient({
   },
 });
 const router = createBrowserRouter([
-  { path: '/', element: <LandingPage /> },
-  /* These routes will be handled by Netlify redirects */
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <Error />,
+    children: [
+      // { path: '', element: <LandingPage /> },
+      { index: true, element: <LandingPage /> },
+      { path: 'contact', element: <Contact /> },
+      // { path: 'contact/:personId', element: <Contact /> }, //this is how you get to indiv pages - on indiv page you need to read personId- see notes in contact
+      /* These routes will be handled by Netlify redirects */
+    ],
+  },
   { path: 'standings', element: <ExternalPagePlaceHolder /> },
   { path: 'ihs', element: <ExternalPagePlaceHolder /> },
 ]);

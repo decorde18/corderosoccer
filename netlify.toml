@@ -11,4 +11,4 @@
   force = false
 
   [build]
-  publish = "dist" # or "build" if using Create React App
+  publish = "dist"
