@@ -1,3 +1,3 @@
-# This is my cordero soccer landing page
+# This is my cordero soccer Landing page
 
 git push origin master
