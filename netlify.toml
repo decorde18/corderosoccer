@@ -1,11 +1,11 @@
 [[redirects]]
-from = "/standings"
-to = "https://standings-decorde.netlify.app"
-status = 200
-force = true
+  from = "/standings"
+  to = "https://standings-decorde.netlify.app"
+  status = 200
+  force = true
 
 [[redirects]]
-from = "/ihs"
-to = "https://ihsapp.netlify.app"
-status = 200
-force = true
+  from = "/ihs"
+  to = "https://ihsapp.netlify.app"
+  status = 200
+  force = true
