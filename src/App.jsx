@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components'; //needed for the props in styledComponents to not return errors
 import isPropValid from '@emotion/is-prop-valid'; //needed for the props in styledComponents to not return errors
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,8 +32,11 @@ const router = createBrowserRouter([
       /* These routes will be handled by Netlify redirects */
     ],
   },
-  // { path: 'standings', element: <ExternalPagePlaceHolder /> },
-  // { path: 'ihs', element: <ExternalPagePlaceHolder /> },
+  {
+    path: 'standings',
+    element: <Navigate to="https://standings-decorde.netlify.app" />,
+  },
+  { path: 'ihs', element: <ExternalPagePlaceHolder /> },
 ]);
 function App() {
   // This implements the default behavior from styled-components v5
