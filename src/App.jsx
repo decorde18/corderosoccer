@@ -34,9 +34,10 @@ const router = createBrowserRouter([
   },
   {
     path: 'standings',
-    element: <Navigate to="https://standings-decorde.netlify.app" />,
+    element: <Navigate to="/standings-decorde.netlify.app" />,
   },
-  { path: 'ihs', element: <ExternalPagePlaceHolder /> },
+  // { path: 'ihs', element: <ExternalPagePlaceHolder /> },
+  { path: 'ihs' },
 ]);
 function App() {
   // This implements the default behavior from styled-components v5
