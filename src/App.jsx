@@ -32,10 +32,10 @@ const router = createBrowserRouter([
       /* These routes will be handled by Netlify redirects */
     ],
   },
-  {
-    path: 'standings',
-    // element: <Navigate to="/standings-decorde.netlify.app" />,
-  },
+  // {
+  //   path: 'standings',
+  //   // element: <Navigate to="/standings-decorde.netlify.app" />,
+  // },
   // { path: 'ihs', element: <ExternalPagePlaceHolder /> },
 ]);
 function App() {
