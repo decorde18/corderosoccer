@@ -1,11 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
-import pages from '../helpers/pages';
 import styled from 'styled-components';
+import pages from '../helpers/pages';
 
 // Styled components
-
 const StyledHeader = styled.header`
   background: #e92228;
   color: #ffffff;
@@ -15,7 +12,14 @@ const StyledHeader = styled.header`
   h1 {
     margin: 0;
   }
+
+  img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 10px;
+  }
 `;
+
 const Nav = styled.nav`
   display: flex;
   justify-content: center;
@@ -27,47 +31,31 @@ const Nav = styled.nav`
     text-decoration: none;
     font-weight: bold;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    &:hover,
     &.active {
       text-decoration: underline;
     }
   }
 `;
+
 function Header() {
   return (
     <StyledHeader>
-      <h1>Cordero Soccer</h1>
+      <div>
+        <h1>Cordero Soccer</h1>
+        <img src="/logo.png" alt="logo" />
+      </div>
       <Nav>
-        {pages.map((page, idx) =>
-          page.layout ? (
-            <NavLink
-              key={`nav-${idx}`}
-              to={page.link}
-              activeClassName={({ isActive }) =>
-                isActive ? 'active' : undefined
-              }
-              end
-            >
-              {page.label}
-            </NavLink>
-          ) : (
-            <Link
-              key={`nav-${idx}`}
-              to={page.link}
-              activeClassName={({ isActive }) =>
-                isActive ? 'active' : undefined
-              }
-              relative="path"
-              // relative="path" will only remove one segment on the url /products/123 would only remove 123 not products as well if they are siblings
-              // default is route
-              end
-            >
-              {page.label}
-            </Link>
-          )
-        )}
+        {pages.map((page, idx) => (
+          <NavLink
+            key={`nav-${idx}`}
+            to={page.link}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            end
+          >
+            {page.label}
+          </NavLink>
+        ))}
       </Nav>
     </StyledHeader>
   );

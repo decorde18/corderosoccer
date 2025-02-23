@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components'; //needed for the props in styledComponents to not return errors
 import isPropValid from '@emotion/is-prop-valid'; //needed for the props in styledComponents to not return errors
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import LandingPage from './pages/LandingPage';
 import ExternalPagePlaceHolder from './pages/ExternalPagePlaceHolder';
@@ -13,12 +13,8 @@ import Toast from './components/UI/Toast';
 import RootLayout from './pages/RootLayout';
 import Error from './components/UI/Error';
 import Contact from './pages/Contact';
+import { queryClient } from './util/http';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { staleTime: 0 },
-  },
-});
 const router = createBrowserRouter([
   {
     path: '/',
