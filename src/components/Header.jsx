@@ -44,7 +44,7 @@ function Header() {
       <div>
         <h1>Cordero Soccer</h1>
         <img src="/logo.png" alt="logo" />
-        <img src="/mockLogo.png" alt="logo" />
+        <img src="/mockLogo.jpg" alt="logo" />
       </div>
       <Nav>
         {pages.map((page, idx) => (
