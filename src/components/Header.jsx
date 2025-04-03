@@ -47,16 +47,18 @@ function Header() {
         <img src="/mockLogo.jpg" alt="logo" />
       </div>
       <Nav>
-        {pages.map((page, idx) => (
-          <NavLink
-            key={`nav-${idx}`}
-            to={page.link}
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            end
-          >
-            {page.label}
-          </NavLink>
-        ))}
+        {pages
+          .filter((page) => page.display !== false)
+          .map((page, idx) => (
+            <NavLink
+              key={`nav-${idx}`}
+              to={page.link}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              end
+            >
+              {page.label}
+            </NavLink>
+          ))}
       </Nav>
     </StyledHeader>
   );

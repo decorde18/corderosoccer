@@ -1,6 +1,6 @@
 import {
   createBrowserRouter,
-  Navigate,
+  // Navigate,
   RouterProvider,
 } from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components'; //needed for the props in styledComponents to not return errors
@@ -8,7 +8,7 @@ import isPropValid from '@emotion/is-prop-valid'; //needed for the props in styl
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import LandingPage from './pages/LandingPage';
-import ExternalPagePlaceHolder from './pages/ExternalPagePlaceHolder';
+// import ExternalPagePlaceHolder from './pages/ExternalPagePlaceHolder';
 import Toast from './components/UI/Toast';
 import RootLayout from './pages/RootLayout';
 import Error from './components/UI/Error';
@@ -23,11 +23,13 @@ const router = createBrowserRouter([
     children: [
       // { path: '', element: <LandingPage /> },
       { index: true, element: <LandingPage /> },
+      { path: 'standings-js', element: <Contact /> },
       { path: 'contact', element: <Contact /> },
       // { path: 'contact/:personId', element: <Contact /> }, //this is how you get to indiv pages - on indiv page you need to read personId- see notes in contact
       /* These routes will be handled by Netlify redirects */
     ],
   },
+
   // {
   //   path: 'standings',
   //   // element: <Navigate to="/standings-decorde.netlify.app" />,

@@ -6,7 +6,6 @@ import styled from 'styled-components';
 const Main = styled.main`
   padding: 20px;
 `;
-
 const Section = styled.section`
   background: #ebeff7;
   border-radius: 5px;
