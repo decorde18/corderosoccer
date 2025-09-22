@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SiteCard = ({ site }) => (
   <div className="site-card">
     <h3>{site.name}</h3>
