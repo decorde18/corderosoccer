@@ -3,7 +3,7 @@ import netlifyIdentity from '../auth';
 import sites from '../sites.json';
 
 import logo from '../../src/logo.png';
-import SiteCard from './Sitecard';
+import SiteCard from './SiteCard';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
