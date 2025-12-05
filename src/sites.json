@@ -1,12 +1,17 @@
 [
   {
+    "id": "Stats App",
+    "name": "Soccer Stats App",
+    "url": "https: //statsapp.corderosoccer.com/"
+  },
+  {
     "id": "mtsa",
     "name": "MTSA Portal",
     "url": "https://mtsa.corderosoccer.com"
   },
   {
-    "id": "tnsoccer",
-    "name": "TNSoccer Portal",
-    "url": "https://tnsoccer.corderosoccer.com"
+    "id": "standings",
+    "name": "Standings Portal",
+    "url": "https://standings.corderosoccer.com"
   }
 ]
