@@ -13,5 +13,30 @@
     "id": "standings",
     "name": "Standings Portal",
     "url": "https://standings.corderosoccer.com"
+  },
+  {
+    "id": "cordero-beach",
+    "name": "Cordero Beach",
+    "url": "https://cordero-beach.corderosoccer.com"
+  },
+  {
+    "id": "team-creation",
+    "name": "Team Creation",
+    "url": "https://teamcreation.corderosoccer.com"
+  },
+  {
+    "id": "rbt",
+    "name": "Cordero RBT",
+    "url": "https://corderorbt.netlify.app"
+  },
+  {
+    "id": "HS-v1",
+    "name": "HS V1",
+    "url": "https://ihsapp.netlify.app"
+  },
+  {
+    "id": "HS-v2",
+    "name": "HS V2",
+    "url": "https://hs-stats-app.netlify.app"
   }
 ]
