@@ -46,7 +46,7 @@ const Dashboard = ({ user }) => (
         Logout
       </LogoutButton>
     </Header>
-    <h2>Welcome, {user.user_metadata.full_name}</h2>
+    <h2>Welcome, {user?.user_metadata?.full_name || user?.email || 'User'}</h2>
     <SiteList>
       {sites.map((site) => (
         <SiteCard key={site.id} site={site} />

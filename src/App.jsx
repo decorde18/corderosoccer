@@ -6,11 +6,31 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => netlifyIdentity.currentUser());
 
   useEffect(() => {
-    netlifyIdentity.on('login', (user) => setUser(user));
-    netlifyIdentity.on('logout', () => setUser(null));
+    const handleInit = (user) => {
+      setUser(user);
+    };
+
+    const handleLogin = (user) => {
+      setUser(user);
+      netlifyIdentity.close();
+    };
+
+    const handleLogout = () => {
+      setUser(null);
+    };
+
+    netlifyIdentity.on('init', handleInit);
+    netlifyIdentity.on('login', handleLogin);
+    netlifyIdentity.on('logout', handleLogout);
+
+    return () => {
+      netlifyIdentity.off('init', handleInit);
+      netlifyIdentity.off('login', handleLogin);
+      netlifyIdentity.off('logout', handleLogout);
+    };
   }, []);
 
   return (

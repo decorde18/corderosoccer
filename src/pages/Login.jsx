@@ -50,7 +50,12 @@ const Button = styled.button`
 
 const Login = () => {
   const handleLogin = () => {
-    netlifyIdentity.open();
+    const currentUser = netlifyIdentity.currentUser();
+    if (currentUser) {
+      netlifyIdentity.close();
+    } else {
+      netlifyIdentity.open();
+    }
   };
 
   return (
