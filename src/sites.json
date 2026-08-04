@@ -25,6 +25,11 @@
     "url": "https://teamcreation.corderosoccer.com"
   },
   {
+    "id": "player-placement",
+    "name": "Player Placement",
+    "url": "https://playermovement.corderosoccer.com"
+  },
+  {
     "id": "rbt",
     "name": "Cordero RBT",
     "url": "https://corderorbt.netlify.app"
